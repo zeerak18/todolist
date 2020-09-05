@@ -13,8 +13,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //1. create and connect to mongo db
-const url = "mongodb://localhost:27017/todolistDB";
-mongoose.connect(url, { useUnifiedTopology: true}, { useNewUrlParser: true });
+// const url = "mongodb://localhost:27017/todolistDB";
+const mongoAtlassUrl = "mongodb+srv://admin-zeerak:admin@cluster0.0nkuo.mongodb.net/todolistDB";
+mongoose.connect(mongoAtlassUrl, { useUnifiedTopology: true}, { useNewUrlParser: true });
 
 //2. create an items schema and put whatever field we want in that schema.
 const itemsSchema = {
